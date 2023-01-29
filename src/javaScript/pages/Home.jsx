@@ -4,7 +4,7 @@ import logoCucina from '../logoCucina.png'
 
 const Home = (props) => {
     const { menus, texts } = props
-    const [day, setDay] = useState(2)
+    const [day, setDay] = useState(new Date().getDay())
     const [menuSrc, setMenuSrc] = useState('')
 
     useEffect(() => {

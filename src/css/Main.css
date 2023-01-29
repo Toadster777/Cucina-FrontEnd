@@ -1,0 +1,49 @@
+@font-face {
+	font-family: 'GreatVibes';
+	src: url('../../public/GreatVibes-Regular.ttf') format('ttf');
+}
+
+h2 {
+  font-family: GreatVibes;
+  font-style: italic;
+  font-size: large;
+}
+
+h1,p,a {
+  font-style: italic;
+  text-decoration: none;
+}
+
+@media screen and (min-width:1024px) {
+  .container {
+    margin: 0 10% 0 10%;
+    justify-content: center;
+  }
+
+  nav {
+    padding: 0 10% 0 10%;
+  }
+}
+@media screen and (max-width:1024px) {
+  .container {
+    margin: 0 20px 0 20px;
+  }
+  
+  nav {
+    padding: 0 20px 0 20px;
+  }
+  
+  }
+
+img {
+  max-width: 1120px;
+  max-height: 1200px;
+}
+
+#content {
+  min-height: calc(100vh - 80px - 56px - 48px - 16px);
+}
+
+button:hover{ 
+  -webkit-transform: scale(1.3);
+ }

@@ -10,19 +10,19 @@ const Home = (props) => {
     useEffect(() => {
         menus.map(menu => {
             if (day === 1 && menu.attributes.Weekday.toLowerCase() === 'luni')
-                setMenuSrc('https://vast-dusk-40691.herokuapp.com' + menu.attributes.menuImg.data.attributes.url)
+                setMenuSrc(menu.attributes.menuImg.data.attributes.url)
 
             if (day === 2 && menu.attributes.Weekday.toLowerCase() === 'marti')
-                setMenuSrc('https://vast-dusk-40691.herokuapp.com' + menu.attributes.menuImg.data.attributes.url)
+                setMenuSrc(menu.attributes.menuImg.data.attributes.url)
 
             if (day === 3 && menu.attributes.Weekday.toLowerCase() === 'miercuri')
-                setMenuSrc('https://vast-dusk-40691.herokuapp.com' + menu.attributes.menuImg.data.attributes.url)
+                setMenuSrc(menu.attributes.menuImg.data.attributes.url)
 
             if (day === 4 && menu.attributes.Weekday.toLowerCase() === 'joi')
-                setMenuSrc('https://vast-dusk-40691.herokuapp.com' + menu.attributes.menuImg.data.attributes.url)
+                setMenuSrc(menu.attributes.menuImg.data.attributes.url)
 
             if (day === 5 && menu.attributes.Weekday.toLowerCase() === 'vineri')
-                setMenuSrc('https://vast-dusk-40691.herokuapp.com' + menu.attributes.menuImg.data.attributes.url)
+                setMenuSrc(menu.attributes.menuImg.data.attributes.url)
         }
         )
 
@@ -32,7 +32,6 @@ const Home = (props) => {
     const handleClick = (buttonDay) => {
         setDay(buttonDay)
     }
-    
     return (
         <div className="w-full">
         <div id="WeekdayPanel" className=" flex flex-row justify-center bg-navGrey w-auto h-12 mb-4">

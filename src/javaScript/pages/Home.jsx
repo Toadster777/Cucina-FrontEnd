@@ -25,8 +25,6 @@ const Home = (props) => {
                 setMenuSrc(menu.attributes.menuImg.data.attributes.url)
         }
         )
-
-
     },)
 
     const handleClick = (buttonDay) => {

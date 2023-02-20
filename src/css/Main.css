@@ -3,6 +3,11 @@
 	src: url('../../public/GreatVibes-Regular.ttf') format('ttf');
 }
 
+@font-face {
+	font-family: 'Montserrat';
+	src: url('../../public/Montserrat-VariableFont_wght.ttf') format('ttf');
+}
+
 h2 {
   font-family: GreatVibes;
   font-style: italic;
@@ -14,8 +19,8 @@ h1,p,a {
   text-decoration: none;
 }
 
-@media screen and (min-width:1024px) {
-  .container {
+@media screen and (min-width:640px) {
+  .contentContainer {
     margin: 0 10% 0 10%;
     justify-content: center;
   }
@@ -24,8 +29,8 @@ h1,p,a {
     padding: 0 10% 0 10%;
   }
 }
-@media screen and (max-width:1024px) {
-  .container {
+@media screen and (max-width:640px) {
+  .contentContainer {
     margin: 0 20px 0 20px;
   }
   
@@ -40,10 +45,42 @@ img {
   max-height: 1200px;
 }
 
-#content {
-  min-height: calc(100vh - 80px - 56px - 48px - 16px);
+.content {
+  min-height: calc(100vh - 80px - 56px);
 }
 
-button:hover{ 
+.menuButton:hover{ 
   -webkit-transform: scale(1.3);
  }
+
+ .locationCardBtn:hover{ 
+  transition-duration: 200ms;
+  -webkit-transform: scale(1.1);
+ }
+ 
+
+ 
+
+
+
+.carousel {
+  max-height: 400px;
+}
+.slider {
+  max-height: 400px;
+}
+
+.locationCard {
+  width: 420px;
+  height: 500px;  
+}
+
+.font-Montserrat {
+  font-family: Montserrat;
+}
+
+.NavMenutxtStyle {
+  font-family: Montserrat;
+  font-size: 24px;
+  color: black;
+}

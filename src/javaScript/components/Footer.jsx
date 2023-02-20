@@ -7,8 +7,8 @@ function Footer() {
 
     return(
         
-    <footer class="p-4 bg-oliveGreen  flex justify-center ">
-        <div className="flex flex-col items-center md:flex-row md:justify-between w-full container ">
+    <footer class="p-8 bg-oliveGreen  flex justify-center ">
+        <div className="flex flex-col items-center md:flex-row md:justify-between w-full contentContainer ">
              <span class="text-md text-black sm:text-center rxs:hidden">© 2023 <a href="https://cucinaromana.ro" class="hover:underline">Cucina Romana</a>. All Rights Reserved.
             </span>
         <img src={logoCucina} alt="Logo Cucina Romana" className="w-auto h-28 xs:hidden mb-6" />

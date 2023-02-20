@@ -1,74 +1,64 @@
-import React, { useState, useEffect } from "react";
-import '../../css/Main.css';
-import logoCucina from '../logoCucina.png'
+import {useState, useEffect} from 'react'
+import PhotoCarousel from '../components/PhotoCarousel'
+import LocationCard from '../components/LocationCard'
+import SideMenu from '../components/SideMenu'
 
-const Home = (props) => {
-    const { menus, texts } = props
-    const [day, setDay] = useState(new Date().getDay())
-    const [menuSrc, setMenuSrc] = useState('')
+const Home = () => {
+  const [photos, setPhotos] = useState([])
+  const [carouselPhotos, setCarouselPhotos] = useState([])
+  const [LCData, setLCData] = useState([])
+  useEffect(() => {
+      requestPhotos()
+      requestCardInfo()
+    }, [] )
 
-    useEffect(() => {
-        menus.map(menu => {
-            if (day === 1 && menu.attributes.Weekday.toLowerCase() === 'luni')
-                setMenuSrc(menu.attributes.menuImg.data.attributes.url)
 
-            if (day === 2 && menu.attributes.Weekday.toLowerCase() === 'marti')
-                setMenuSrc(menu.attributes.menuImg.data.attributes.url)
+  useEffect(() => {
+    createObjArray()
+  }, [photos])
 
-            if (day === 3 && menu.attributes.Weekday.toLowerCase() === 'miercuri')
-                setMenuSrc(menu.attributes.menuImg.data.attributes.url)
-
-            if (day === 4 && menu.attributes.Weekday.toLowerCase() === 'joi')
-                setMenuSrc(menu.attributes.menuImg.data.attributes.url)
-
-            if (day === 5 && menu.attributes.Weekday.toLowerCase() === 'vineri')
-                setMenuSrc(menu.attributes.menuImg.data.attributes.url)
-        }
-        )
-    },)
-
-    const handleClick = (buttonDay) => {
-        setDay(buttonDay)
+  const  requestPhotos = async () => {
+      await fetch("https://vast-dusk-40691.herokuapp.com/api/photos?populate=*")
+        .then((response) =>response.json())
+        .then((data) => {
+            setPhotos(data.data[0].attributes.HomePhotos.data) 
+        }) 
     }
-    return (
-        <div className="w-full">
-        <div id="WeekdayPanel" className=" flex flex-row justify-center bg-navGrey w-auto h-12 mb-4">
-                <div className="container flex flex-row justify-between w-full">
-                    <button onClick={() => handleClick(1)}><h2 className={day === 1 ? 'text-oliveGreen' : null}>Luni</h2>
-                    </button>
-                    <button onClick={() => handleClick(2)}><h2 className={day === 2 ? 'text-oliveGreen' : null}>Marti</h2></button>
-                    <button onClick={() => handleClick(3)}><h2 className={day === 3 ? 'text-oliveGreen' : null}>Miercuri</h2></button>
-                    <button onClick={() => handleClick(4)}><h2 className={day === 4 ? 'text-oliveGreen' : null}>Joi</h2></button>
-                    <button onClick={() => handleClick(5)}><h2 className={day === 5 ? 'text-oliveGreen' : null}>Vineri</h2></button>
-                </div>
 
-            </div>
-        < div id="content" className="w-full h-full flex flex-col justify-center items-center">
-            
-            {
-                !(day === 0 || day === 6) ?
-                <div id="MenuSheet" className="flex justify-center">
-                        <img src={menuSrc} alt="Menu" className="object-contain mb-8" />
-                    </div>
-                    :
-                    (texts.length > 0) ? <div id="MsgSheet" className=" flex flex-col items-center md:text-3xl justify-center gap-4 ">
-                        <h1 className="">{texts?.[0]?.attributes?.content}</h1>
-                        <p className="text-center w-3/5">{texts?.[1]?.attributes?.content}</p>
-                        <img src={logoCucina} alt="Logo Cucina" className="h-48 w-auto" />
-                    </div> : null
-            }
-            <div className="flex justify-center">
-                <button class="bg-black  text-white font-semibold hover:text-white py-1 px-4  border border-transparent hover:border-transparent rounded xs:hidden my-2 w-40 ">
-                    <a href="tel:0770 525 875">Contact</a>
-                </button>
-            </div>
+    const  requestCardInfo = async () => {
+      await fetch("https://vast-dusk-40691.herokuapp.com/api/locations")
+        .then((response) =>response.json())
+        .then((data) => {
+            setLCData(data.data)
+        }) 
+    }
+   
+    const photoObj = function(image){
+      this.image = image; 
+    }
 
+    const createObjArray = () => {
+      let carouselPhotosLocal = []
+      photos.map(photo => {
+          let obj = new photoObj(photo.attributes.url, '')
+          carouselPhotosLocal.push(obj)
+          })
+      setCarouselPhotos(carouselPhotosLocal)
+      
+    }
+  return (
+    <>
+      <PhotoCarousel/>
+      <div className='flex flex-col w-full content'>
+        
+
+        <div className='contentContainer flex justify-between arrangeColumn'>
+            <LocationCard data = {LCData}/>
 
         </div>
-    </div>
-    )
+      </div>
+    </>      
+  )
 }
-
-
 
 export default Home

@@ -57,13 +57,6 @@ const MenuPage = (props) => {
                         <img src={logoCucina} alt="Logo Cucina" className="h-48 w-auto" />
                     </div> : null
             }
-            {/* <div className="flex justify-center">
-                <button class="bg-black  text-white font-semibold hover:text-white py-1 px-4  border border-transparent hover:border-transparent rounded xs:hidden my-2 w-40 ">
-                    <a href="tel:0770 525 875">Contact</a>
-                </button>
-            </div> */}
-
-
         </div>
     </div>
     )

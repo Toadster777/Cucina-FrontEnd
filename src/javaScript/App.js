@@ -9,6 +9,16 @@ function App() {
 
   const [menus, setMenus] = useState([])
   const [texts, setTexts] = useState([])
+  const [LCData, setLCData] = useState([])
+
+
+  useEffect(() => {
+    requestMenus()
+    requestTexts()
+    requestCardInfo()
+  }, [] )
+
+
   const  requestMenus = async () => {
     await fetch("https://vast-dusk-40691.herokuapp.com/api/menus?populate=*")
       .then((response) =>response.json())
@@ -24,20 +34,19 @@ function App() {
           setTexts(data.data)
       }) 
 }
-
-
-
-  useEffect(() => {
-    requestMenus()
-    requestTexts()
-  }, [] )
-
+  const  requestCardInfo = async () => {
+    await fetch("https://vast-dusk-40691.herokuapp.com/api/locations")
+      .then((response) =>response.json())
+      .then((data) => {
+          setLCData(data.data)
+      }) 
+  }
 
   return (
     <div className="App">
       <NavBar />
       <Routes>
-        <Route path = '/' element={<Home/>} />
+        <Route path = '/' element={<Home LCData = {LCData}/>} />
         <Route path = '/Menus' element={<MenuPage menus = {menus} texts = {texts}/>} />
         <Route path = '/Contact' element={<Contact/>} />
       </Routes>

@@ -1,29 +1,40 @@
-import MenuPage from './pages/MenuPage.jsx';
+import MenuPipera from './pages/MenuPipera.jsx';
 import NavBar from './components/NavBar.jsx';
 import Footer from './components/Footer.jsx';
 import Contact from './pages/Contact.jsx'
 import React, {useEffect, useState } from 'react';
 import { Routes, Route } from "react-router-dom";
 import  Home  from './pages/Home.jsx';
+import MenuGara from './pages/MenuGara.jsx'
 function App() {
 
-  const [menus, setMenus] = useState([])
+  const [menusPipera, setMenusPipera] = useState([])
+  const [menusGara, setMenusGara] = useState([])
   const [texts, setTexts] = useState([])
   const [LCData, setLCData] = useState([])
 
 
   useEffect(() => {
-    requestMenus()
+    requestMenusPipera()
+    requestMenusGara()
     requestTexts()
     requestCardInfo()
   }, [] )
 
 
-  const  requestMenus = async () => {
+  const  requestMenusPipera = async () => {
     await fetch("https://vast-dusk-40691.herokuapp.com/api/menus?populate=*")
       .then((response) =>response.json())
       .then((data) => {
-          setMenus(data.data)
+          setMenusPipera(data.data)
+      }) 
+  }
+
+  const  requestMenusGara = async () => {
+    await fetch("https://vast-dusk-40691.herokuapp.com/api/menu-gara-de-nords?populate=*")
+      .then((response) =>response.json())
+      .then((data) => {
+          setMenusGara(data.data)
       }) 
   }
 
@@ -47,7 +58,8 @@ function App() {
       <NavBar />
       <Routes>
         <Route path = '/' element={<Home LCData = {LCData}/>} />
-        <Route path = '/Menus' element={<MenuPage menus = {menus} texts = {texts}/>} />
+        <Route path = '/menuPipera' element={<MenuPipera menus = {menusPipera} texts = {texts}/>} />
+        <Route path = '/menuGaraDeNord' element={<MenuGara menus = {menusGara} texts = {texts}/>} />
         <Route path = '/Contact' element={<Contact/>} />
       </Routes>
       

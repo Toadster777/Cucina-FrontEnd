@@ -41,7 +41,7 @@ const PhotoCarousel = () => {
       }
 
       return (
-        <div className=''>
+        <div className='z-0'>
         <Carousel images={createObjArray()} isLoop = {true} canAutoPlay = {true} isAutoPlaying = {true} autoPlayInterval = {5000} hasLeftButton = {false} hasRightButton = {false} hasSizeButton = {false} hasIndexBoard = {false} hasThumbnails = {false} hasMediaButton = {false} transitionSpeed = {0.4} style={{ height: 650, width: "auto" }} />
         </div>
       );

@@ -21,12 +21,12 @@ h1,p,a {
 
 @media screen and (min-width:640px) {
   .contentContainer {
-    margin: 0 10% 0 10%;
+    margin: 0 6.5% 0 6.5%;
     justify-content: center;
   }
 
   nav {
-    padding: 0 10% 0 10%;
+    padding: 0 6.5% 0 6.5%;
   }
 }
 @media screen and (max-width:640px) {
@@ -36,6 +36,10 @@ h1,p,a {
   
   nav {
     padding: 0 20px 0 20px;
+  }
+
+  .mobileText{
+    font-size: 9px;
   }
   
   }
@@ -55,7 +59,7 @@ img {
 
  .locationCardBtn:hover{ 
   transition-duration: 200ms;
-  -webkit-transform: scale(1.1);
+  -webkit-transform: scale(1.05);
  }
  
 

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import '../../css/Main.css';
 import logoCucina from '../logoCucina.png'
 
-const MenuPage = (props) => {
+const MenuPipera = (props) => {
     const { menus, texts } = props
     const [day, setDay] = useState(new Date().getDay())
     const [menuSrc, setMenuSrc] = useState('')
@@ -64,4 +64,4 @@ const MenuPage = (props) => {
 
 
 
-export default MenuPage
+export default MenuPipera

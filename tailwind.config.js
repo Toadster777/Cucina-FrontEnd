@@ -22,6 +22,12 @@ module.exports = {
         'rmd': {
 					max: '768px',
 				},
+        'rlg': {
+					max: '1024px',
+				},
+        'rsm': {
+					max: '640px',
+				},
       },
       textColor: {
 				oliveGreen: '#ADA030',

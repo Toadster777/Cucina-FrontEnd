@@ -1,13 +1,7 @@
-import {useState, useEffect} from "react";
 import '../../css/Main.css'
 import logoname from '../logoCucinaname.png'
-import menuIcon from '../mobileMenuIcon.svg'
-import { slide as Menu } from 'react-burger-menu'
 function NavBar () {
-  const [toggleMbMenu, setToggleMbMenu] = useState(false)
- const showSettings = (event) => {
-    event.preventDefault();
-  }
+
 
 
     return(
@@ -27,13 +21,6 @@ function NavBar () {
                 <li>|</li>
                 <li><button className="menuButton mobileText"><a href="/Contact">Contact</a></button></li>
               </ul>
-
-            {/* <Menu right className="h-full md:hidden">
-              <a id="home" className="menu-item" href="/">Home</a>
-              <a id="about" className="menu-item" href="/about">About</a>
-              <a id="contact" className="menu-item" href="/contact">Contact</a>
-              <a onClick={ showSettings } className="menu-item--small" href="">Settings</a>
-          </Menu> */}
           </div>
         </nav>
     ) 

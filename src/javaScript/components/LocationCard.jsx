@@ -1,7 +1,6 @@
 import React from 'react'
 import logoCucina from '../logoCucina.png'
      const LocationCard = ({data}) => {
-      const apiUrl = ['/menuPipera', '/menuGaraDeNord']
 
   return (
       data.map(location => {

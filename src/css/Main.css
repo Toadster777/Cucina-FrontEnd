@@ -39,7 +39,7 @@ h1,p,a {
   }
 
   .mobileText{
-    font-size: 9px;
+    font-size: 11px;
   }
   
   }
@@ -62,11 +62,6 @@ img {
   -webkit-transform: scale(1.05);
  }
  
-
- 
-
-
-
 .carousel {
   max-height: 400px;
 }

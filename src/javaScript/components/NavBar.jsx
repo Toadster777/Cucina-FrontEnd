@@ -12,9 +12,7 @@ function NavBar () {
             </a>
           </div>  
           <div>
-            <ul className="flex flex-row gap-8  rsm:gap-2 NavMenutxtStyle  rmd:text-base md:text-lg rmd:gap-4">
-                <li><button className="menuButton mobileText"><a href="/">Acasa</a></button></li>
-                <li>|</li>
+            <ul className="flex flex-row gap-8  rsm:gap-2 NavMenutxtStyle  rmd:text-lg md:text-xl rmd:gap-4">
                 <li><button className="menuButton mobileText"><a href="/MenuPipera">Meniu Pipera</a></button></li>
                 <li>|</li>
                 <li><button className="menuButton mobileText"><a href="/MenuGaraDeNord">Meniu Gara de Nord</a></button></li>

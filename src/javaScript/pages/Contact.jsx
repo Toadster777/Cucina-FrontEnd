@@ -57,18 +57,18 @@ console.log(LCData)
          
           <iframe className='w-full pl-10' height="450" title='Pipera' loading="lazy" allowfullscreen src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJR7eTjXUDskARB3QBoh9DlfM&key=AIzaSyA_VhaJxPdmUy0Nfcl5FGY6YlX13Qcfn4I"></iframe>
         </div>
-s
+
         </div>
 
-        <div className='flex flex-col gap-8  items-center lg:hidden'>
+        <div className='flex flex-col gap-8  items-center lg:hidden overflow-visible -mt-32'>
           {LCData.map(location => {
               return(
-                <div  className='flex flex-col w-auto h-auto rmd:justify-center bg-oliveGreen locationCard my-12 p-8 pb-4 gap-10 rounded-md text-white'>
+                <div  className='flex flex-col w-auto h-auto rmd:justify-center bg-oliveGreen locationCard my-12 p-8 pb-4 gap-10 rounded-md text-white opacity-95 '>
                   <div className='w-full h-auto p-12 flex flex-col gap-8'>
                     <div className='location text-white flex flex-col'>
                         <h2 className='text-3xl font-Montserrat text-center mb-8'>{location.attributes.Name}</h2>
                         <h2 className='text-xl font-Montserrat'>INFO</h2>
-                        <a href = {location.attributes.mapUrl} target = "_blank" className='text-lg font-Montserrat'>Adresa: {location.attributes.Address}</a>
+                        <a href = {location.attributes.mapUrl} target = "_blank" className='text-lg font-Montserrat'>Adresa:<u>{location.attributes.Address}</u></a>
                         <span className='text-lg font-Montserrat'>Telefon Locatie: {location.attributes.phoneNo}</span>
                         <span className='text-lg font-Montserrat'>Sesizari: 0722670984</span>
                     </div>

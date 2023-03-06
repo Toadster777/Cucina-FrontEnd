@@ -6,6 +6,9 @@ module.exports = {
   theme: {
     extend: {
       backgroundColor:{
+        //#b0acac - light grey
+        //#808080 - dark grey
+        //#ADA030 - original green
         oliveGreen: '#ADA030',
         navGrey: '#A2A0A029',
       },

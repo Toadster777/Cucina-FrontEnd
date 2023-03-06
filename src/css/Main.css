@@ -10,12 +10,10 @@
 
 h2 {
   font-family: GreatVibes;
-  font-style: italic;
   font-size: large;
 }
 
 h1,p,a {
-  font-style: italic;
   text-decoration: none;
 }
 

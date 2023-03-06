@@ -6,7 +6,7 @@ import logoCucina from '../logoCucina.png'
       data.map(location => {
         return (
           
-          <div id = "LocationCard" className='flex flex-col justify-start bg-oliveGreen locationCard my-12 p-8 pb-4 gap-10 rounded-md text-white h-auto w-auto'>
+          <div id = "LocationCard" className='flex flex-col justify-start bg-oliveGreen locationCard mt-12 rlg:mb-12 p-8 pb-4 gap-10 rounded-md text-white h-auto w-auto'>
             <div className='flex justify-center'>
               <img src={logoCucina} alt="Logo" className='h-24 w-24' /> 
             </div>
@@ -50,7 +50,7 @@ import logoCucina from '../logoCucina.png'
                 </g>
               </g>
               </svg>
-              Comanda Acum!
+              COMANDA ACUM
               </a>
               </div>
             

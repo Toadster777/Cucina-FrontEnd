@@ -41,10 +41,7 @@ function Footer() {
                 <a href="/contact" class=" hover:underline font-Montserrat">Contact</a>
             </li>
             <li>
-                <a href="#" class=" hover:underline font-Montserrat">Politica de confidentialitate</a>
-            </li>
-            <li>
-                <a href="#" class=" hover:underline font-Montserrat">Politica cookie</a>
+                <a href="/privacy" class=" hover:underline font-Montserrat">Politica de confidentialitate & Cookie</a>
             </li>
         </ul>
         </div>

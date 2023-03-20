@@ -6,6 +6,7 @@ import React, {useEffect, useState } from 'react';
 import { Routes, Route } from "react-router-dom";
 import  Home  from './pages/Home.jsx';
 import MenuGara from './pages/MenuGara.jsx'
+import Privacy from './pages/Privacy.jsx'
 function App() {
 
   const [menusPipera, setMenusPipera] = useState([])
@@ -47,7 +48,7 @@ function App() {
 }
   const  requestCardInfo = async () => {
     await fetch("https://vast-dusk-40691.herokuapp.com/api/locations")
-      .then((response) =>response.json())
+      .then((response) =>response.json()) 
       .then((data) => {
           setLCData(data.data)
       }) 
@@ -60,7 +61,8 @@ function App() {
         <Route path = '/' element={<Home LCData = {LCData}/>} />
         <Route path = '/menuPipera' element={<MenuPipera menus = {menusPipera} texts = {texts}/>} />
         <Route path = '/menuGaraDeNord' element={<MenuGara menus = {menusGara} texts = {texts}/>} />
-        <Route path = '/Contact' element={<Contact/>} />
+        <Route path = '/pontact' element={<Contact/>}/>
+        <Route path = '/privacy' element={<Privacy/>}/>
       </Routes>
       
       <Footer/>

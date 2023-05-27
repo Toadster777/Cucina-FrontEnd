@@ -61,7 +61,7 @@ function App() {
         <Route path = '/' element={<Home LCData = {LCData}/>} />
         <Route path = '/menuPipera' element={<MenuPipera menus = {menusPipera} texts = {texts}/>} />
         <Route path = '/menuGaraDeNord' element={<MenuGara menus = {menusGara} texts = {texts}/>} />
-        <Route path = '/pontact' element={<Contact/>}/>
+        <Route path = '/contact' element={<Contact/>}/>
         <Route path = '/privacy' element={<Privacy/>}/>
       </Routes>
       

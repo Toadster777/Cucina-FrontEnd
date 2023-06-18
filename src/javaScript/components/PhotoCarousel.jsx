@@ -17,7 +17,7 @@ const PhotoCarousel = () => {
 
 
     const  requestPhotos = async () => {
-        await fetch("https://backend-cucina-4d60cb73f5a9-40691.herokuapp.com/api/photos?populate=*")
+        await fetch("https://backend-cucina-4d60cb73f5a9.herokuapp.com/api/photos?populate=*")
           .then((response) =>response.json())
           .then((data) => {
               setPhotos(data.data[0].attributes.HomePhotos.data) 

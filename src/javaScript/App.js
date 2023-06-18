@@ -24,7 +24,7 @@ function App() {
 
 
   const  requestMenusPipera = async () => {
-    await fetch("https://vast-dusk-40691.herokuapp.com/api/menus?populate=*")
+    await fetch("https://backend-cucina-4d60cb73f5a9-40691.herokuapp.com/api/menus?populate=*")
       .then((response) =>response.json())
       .then((data) => {
           setMenusPipera(data.data)
@@ -32,7 +32,7 @@ function App() {
   }
 
   const  requestMenusGara = async () => {
-    await fetch("https://vast-dusk-40691.herokuapp.com/api/menu-gara-de-nords?populate=*")
+    await fetch("https://backend-cucina-4d60cb73f5a9-40691.herokuapp.com/api/menu-gara-de-nords?populate=*")
       .then((response) =>response.json())
       .then((data) => {
           setMenusGara(data.data)
@@ -40,14 +40,14 @@ function App() {
   }
 
   const  requestTexts = async () => {
-    await fetch("https://vast-dusk-40691.herokuapp.com/api/texts")
+    await fetch("https://backend-cucina-4d60cb73f5a9-40691.herokuapp.com/api/texts")
       .then((response) =>response.json())
       .then((data) => {
           setTexts(data.data)
       }) 
 }
   const  requestCardInfo = async () => {
-    await fetch("https://vast-dusk-40691.herokuapp.com/api/locations")
+    await fetch("https://backend-cucina-4d60cb73f5a9-40691.herokuapp.com/api/locations")
       .then((response) =>response.json()) 
       .then((data) => {
           setLCData(data.data)

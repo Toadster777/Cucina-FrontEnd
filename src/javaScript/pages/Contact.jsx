@@ -12,7 +12,7 @@ const Contact = () => {
 
 
 const  requestCardInfo = async () => {
-  await fetch("https://vast-dusk-40691.herokuapp.com/api/locations")
+  await fetch("https://backend-cucina-4d60cb73f5a9-40691.herokuapp.com/api/locations")
     .then((response) =>response.json())
     .then((data) => {
         setLCData(data.data)
